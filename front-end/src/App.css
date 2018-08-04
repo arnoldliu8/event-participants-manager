@@ -1,0 +1,66 @@
+.entry{
+	background-image: url('form.jpg');
+	color:white;
+	font-weight: bold;
+	background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    margin:0;
+}
+.head{
+	font-family: cursive;
+    color:white;
+    font-weight: bold;
+    font-size: 40px;
+
+}
+.button{
+    background-color:white;
+    color:black;
+    font-weight: bold;
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+.button:hover {
+    background-color: grey
+}
+
+.button:active {
+  background-color: darkgrey;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.subhead{
+    font-style: italic;
+    color:red;
+    text-align: center;
+}
+
+/* Create four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 100%;
+    padding: 10px;
+
+   /* Should be removed. Only for demonstration */
+}
+
+.row{
+	color:white;
+	background-color:black;
+}
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both; 
+}
