@@ -11,7 +11,7 @@ class App extends React.Component {
 constructor(props){
     super(props);
     this.state = {
-    mode:'view'
+    mode:''
   } 
   }
 
@@ -47,12 +47,33 @@ constructor(props){
 
 
   render() {
-    if(this.state.mode==='view'){
+    const {mode} = this.state;
+    let event,team;
+    if(mode==='Event1'){
+     event=<Event1/>
+    }
+    else if(mode==='Event2'){
+     event=<Event2/>
+    }
+    else if(mode==='Event3'){
+     event=<Event3/>
+    }
+    else if(mode==='Event4'){
+     event=<Event4/>
+    }
+    else if(mode==='Team1'){
+     team=<Team1/>
+    }
+    else if(mode==='Team2'){
+     team=<Team2/>
+    }
+    else if(mode==='Team3'){
+     team=<Team3/>
+    }
+
     return (
       <div>
-         <div className="entry">
-         <Addparticipants/>
-         </div>
+      <Addparticipants/>
             <br/>
             <div className="row">
                 <br/>
@@ -65,7 +86,11 @@ constructor(props){
                           <button className="button" onClick={this.onEvent2}>Event2</button>
                           <button className="button" onClick={this.onEvent3}>Event3</button>
                           <button className="button" onClick={this.onEvent4}>Event4</button>
-                        
+                          <br/><br/>
+                          <button className="button" onClick={this.onClear}>Clear</button>
+                          <br/><br/>
+                          {event}
+
                 </div>
                 
                 <div className="column" >
@@ -74,291 +99,17 @@ constructor(props){
                           <button className="button" onClick={this.onTeam1}>Team1</button>
                           <button className="button" onClick={this.onTeam2}>Team2</button>
                           <button className="button" onClick={this.onTeam3}>Team3</button>
-                          
+                          <br/><br/>
+                          <button className="button" onClick={this.onClear}>Clear</button> 
+                          <br/><br/>
+                          {team}   
+                                                       
                 </div>
-            </div>
-            
+      </div>
       </div>
 
-    ); 
-    }
-    
-
-
-    else if(this.state.mode==='Event1'){
-      return(
-        <div>        
-         <Addparticipants/>
-            <br/>
-            <div className="row">
-                <br/>
-                <h1 style={{textAlign:"center",fontSize:"80px"}}>NAME OF THE EVENT</h1>
-                <div className="column" >
-                <h2 className="head">View By Event</h2>
-                        
-                          <button className="button" onClick={this.onEvent1}>Event1</button>                
-                          <button className="button" onClick={this.onEvent2}>Event2</button>                
-                          <button className="button" onClick={this.onEvent3}>Event3</button>                
-                          <button className="button" onClick={this.onEvent4}>Event4</button><br/>
-                          <button className="button" onClick={this.onClear}>Clear</button>
-                          
-                          <Event1/>
-                                                  
-                </div>
-              
-                <div className="column" >
-                  <h2 className="head">View By Team</h2>
-                          
-                          <button className="button" onClick={this.onTeam1}>Team1</button>
-                          <button className="button" onClick={this.onTeam2}>Team2</button>              
-                          <button className="button" onClick={this.onTeam3}>Team3</button>
-                          
-                </div>
-            </div>
-        </div>
-      );
-    } 
-    
-    
-
-
-    else if (this.state.mode==='Event2'){
-      return(
-        <div>
-         <Addparticipants/>
-            <br/>
-            <div className="row">
-                <br/>
-                <h1 style={{textAlign:"center",fontSize:"80px"}}>NAME OF THE EVENT</h1>
-                
-                <div className="column" >
-                <h2 className="head">View By Event</h2>
-                          
-                          <button className="button" onClick={this.onEvent1}>Event1</button>                
-                          <button className="button" onClick={this.onEvent2}>Event2</button>                
-                          <button className="button" onClick={this.onEvent3}>Event3</button>                
-                          <button className="button" onClick={this.onEvent4}>Event4</button><br/>
-                          <button className="button" onClick={this.onClear}>Clear</button>                    
-                          
-                          <Event2/>
-                          
-                </div>
-
-             
-                <div className="column" >
-                   <h2 className="head">View By Team</h2>
-                          <div className="button">
-                          <button className="button" onClick={this.onTeam1}>Team1</button>
-                          <button className="button" onClick={this.onTeam2}>Team2</button>              
-                          <button className="button" onClick={this.onTeam3}>Team3</button>
-                          </div>
-                </div>
-            </div>
-        </div>
-      );
-    }
-      
-
-
-
-      else if (this.state.mode==='Event3'){
-      return(
-        <div>
-         <Addparticipants/>
-            <br/>
-            <div className="row">
-                <br/>
-                <h1 style={{textAlign:"center",fontSize:"80px"}}>NAME OF THE EVENT</h1>
-               
-                <div className="column" >
-                 <h2 className="head">View By Event</h2>
-                          
-                          <button className="button" onClick={this.onEvent1}>Event1</button>                
-                          <button className="button" onClick={this.onEvent2}>Event2</button>                
-                          <button className="button" onClick={this.onEvent3}>Event3</button>                
-                          <button className="button" onClick={this.onEvent4}>Event4</button><br/>
-                          <button className="button" onClick={this.onClear}>Clear</button>
-                          
-                          <Event3/>
-                          
-                </div>
-              
-                <div className="column" >
-                  <h2 className="head">View By Team</h2>
-                          
-                          <button className="button" onClick={this.onTeam1}>Team1</button>
-                          <button className="button" onClick={this.onTeam2}>Team2</button>              
-                          <button className="button" onClick={this.onTeam3}>Team3</button>
-                        
-                </div>
-            </div>
-        </div>
-      );
-    }
-    
-
-
-
-
-    else if (this.state.mode==='Event4'){
-      return(
-        <div>
-         <Addparticipants/>
-            <br/>
-            <div className="row">
-                <br/>
-                <h1 style={{textAlign:"center",fontSize:"80px"}}>NAME OF THE EVENT</h1>
-                
-                <div className="column" >
-                <h2 className="head">View By Event</h2>
-                          
-                          <button className="button" onClick={this.onEvent1}>Event1</button>                
-                          <button className="button" onClick={this.onEvent2}>Event2</button>                
-                          <button className="button" onClick={this.onEvent3}>Event3</button>                
-                          <button className="button" onClick={this.onEvent4}>Event4</button><br/>
-                          <button className="button" onClick={this.onClear}>Clear</button>
-                          
-                          <Event4/>
-                </div>
-         
-                
-                <div className="column" >
-                <h2 className="head">View By Team</h2>
-                          
-                          <button className="button" onClick={this.onTeam1}>Team1</button>
-                          <button className="button" onClick={this.onTeam2}>Team2</button>              
-                          <button className="button" onClick={this.onTeam3}>Team3</button>
-                          
-                </div>
-            </div>
-        </div>
-      );
-    }
-    
-
-
-
-
-    else if (this.state.mode==='Team1'){
-      return(
-        <div>
-         <Addparticipants/>
-            <br/>
-            <div className="row">
-                <br/>
-                <h1 style={{textAlign:"center",fontSize:"80px"}}>NAME OF THE EVENT</h1>
-                
-                <div className="column" >
-                <h2 className="head">View By Event</h2>
-                        
-                          <button className="button" onClick={this.onEvent1}>Event1</button>                
-                          <button className="button" onClick={this.onEvent2}>Event2</button>                
-                          <button className="button" onClick={this.onEvent3}>Event3</button>                
-                          <button className="button" onClick={this.onEvent4}>Event4</button>
-                          
-                </div>
-      
-               
-                <div className="column" >
-                <h2 className="head">View By Team</h2>
-                          
-                          <button className="button" onClick={this.onTeam1}>Team1</button>
-                          <button className="button" onClick={this.onTeam2}>Team2</button>              
-                          <button className="button" onClick={this.onTeam3}>Team3</button><br/>
-                          <button className="button" onClick={this.onClear}>Clear</button>
-                          
-                          <Team1/>
-                   
-                </div>
-            </div>
-        </div>
-      );
-    }
-    
-
-
-    else if (this.state.mode==='Team2'){
-      return(
-        <div>
-         <Addparticipants/>
-            <br/>
-            <div className="row">
-                <br/>
-                <h1 style={{textAlign:"center",fontSize:"80px"}}>NAME OF THE EVENT</h1>
-               
-                <div className="column" >
-                 <h2 className="head">View By Event</h2>
-                          <button className="button" onClick={this.onEvent1}>Event1</button>                
-                          <button className="button" onClick={this.onEvent2}>Event2</button>                
-                          <button className="button" onClick={this.onEvent3}>Event3</button>                
-                          <button className="button" onClick={this.onEvent4}>Event4</button>
-                </div>
-        
-     
-                <div className="column" >
-                          <h2 className="head">View By Team</h2>
-                          
-                          <button className="button" onClick={this.onTeam1}>Team1</button>
-                          <button className="button" onClick={this.onTeam2}>Team2</button>              
-                          <button className="button" onClick={this.onTeam3}>Team3</button><br/>
-                          <button className="button" onClick={this.onClear}>Clear</button>
-                          
-                          <Team2/>
-                         
-                </div>
-            </div>
-        </div>
-      );
-    }
-    
-
-
-
-
-    else if (this.state.mode==='Team3'){
-      return(
-        <div>
-         <Addparticipants/>
-            <br/>
-            <div className="row">
-                <br/>
-                <h1 style={{textAlign:"center",fontSize:"80px"}}>NAME OF THE EVENT</h1>
-                
-                <div className="column" >
-                <h2 className="head">View By Event</h2>
-                        
-                          <button className="button" onClick={this.onEvent1}>Event1</button>                
-                          <button className="button" onClick={this.onEvent2}>Event2</button>                
-                          <button className="button" onClick={this.onEvent3}>Event3</button>                
-                          <button className="button" onClick={this.onEvent4}>Event4</button>
-                          
-                </div>
-              
-                <div className="column" >
-                <h2 className="head">View By Team</h2>
-                          
-                          <button className="button" onClick={this.onEvent1}>Team1</button>
-                          <button className="button" onClick={this.onEvent2}>Team2</button>              
-                          <button className="button" onClick={this.onEvent3}>Team3</button><br/>
-                          <button className="button" onClick={this.onClear}>Clear</button>
-                          
-                          <Team3/>
-                    
-                </div>
-            </div>
-        </div>
-      );
-    }
-    
-
-
-
-    else{
-      return(
-        document.write("error loading page")
-        )
-    }
-}      
+); 
+}
 }
 
 export default App;
