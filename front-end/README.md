@@ -1,6 +1,7 @@
 Front end of this project:
 The src file contains the following files:
 This is a responsive web app.
+Open the src folder to see the JS files.
 
 1. app.js:-
 this is the front page where there is form for participants.
