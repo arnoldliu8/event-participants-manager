@@ -10,7 +10,7 @@ Below it, There are two sections.
 "view by event" section contains button for events and "view by team" contains buttons for teams.
 Pressing the event1, event2, event3,event4 button will display all the information of the participants in event1,event2,event3,event4 respectively in a tabular form below the "view by event" section.
 Same will happen with team buttons.
-clear buttons are present in both sections to remove the list view of participants.
+clear buttons are present in both sections to removes the list view of participants.
 
 2. addparticipants.js:- 
 With participant added,their data is added to our database.
