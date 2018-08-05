@@ -86,18 +86,3 @@ db.select('*').from('participants').where('team','=','team3').then(data=>{
 })
 });
 
-
-
-app.listen(3000,()=>{
-	console.log('app is running on port 3000');
-})
-
-
-
-
-/*
-/organiser register--> post= user
-/login for both participants and organiser --> post = success/fail
-/organiserprofile/:userid --> GET = user
-/organiser update event result --> PUT-->result
-*/
