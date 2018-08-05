@@ -1,8 +1,8 @@
 .entry{
-	background-image: url('form.jpg');
-	color:white;
-	font-weight: bold;
-	background-repeat:no-repeat;
+    background-image: url('form.jpg');
+    color:white;
+    font-weight: bold;
+    background-repeat:no-repeat;
     background-size:cover;
     background-position:center;
     margin:0;
@@ -45,20 +45,18 @@
     text-align: center;
 }
 
-/* Create four equal columns that floats next to each other */
+
 .column {
     float: left;
     width: 100%;
     padding: 10px;
-
-   /* Should be removed. Only for demonstration */
 }
 
 .row{
 	color:white;
 	background-color:black;
 }
-/* Clear floats after the columns */
+
 .row:after {
     content: "";
     display: table;
