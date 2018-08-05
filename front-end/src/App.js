@@ -11,65 +11,50 @@ class App extends React.Component {
 constructor(props){
     super(props);
     this.state = {
-    mode:''
+    event:[],
+    team:[]
   } 
   }
-
+  
   onEvent1=()=>{
-    this.setState({mode:'Event1'})
+    this.setState({event:<Event1/>})
+    
   }
   onEvent2=()=>{
-    this.setState({mode:'Event2'})
+    this.setState({event:<Event2/>})
   }
   onEvent3=()=>{
-    this.setState({mode:'Event3'})
+    this.setState({event:<Event3/>})
   }
   onEvent4=()=>{
-    this.setState({mode:'Event4'})
+    this.setState({event:<Event4/>})
   }
 
   onTeam1=()=>{
-    this.setState({mode:'Team1'})
+    this.setState({team:<Team1/>})
   }
   onTeam2=()=>{
-    this.setState({mode:'Team2'})
+    this.setState({team:<Team2/>})
   }
   onTeam3=()=>{
-    this.setState({mode:'Team3'})
+    this.setState({team:<Team3/>})
   }
 
-  onClear=()=>
+  onClearTeam=()=>
   {
-    this.setState({mode:'view'})
+    this.setState({team:[]})
   }
   
+  
+  onClearEvent=()=>
+  {
+    this.setState({event:[]})
+  }
   
 
 
   render() {
-    const {mode} = this.state;
-    let event,team;
-    if(mode==='Event1'){
-     event=<Event1/>
-    }
-    else if(mode==='Event2'){
-     event=<Event2/>
-    }
-    else if(mode==='Event3'){
-     event=<Event3/>
-    }
-    else if(mode==='Event4'){
-     event=<Event4/>
-    }
-    else if(mode==='Team1'){
-     team=<Team1/>
-    }
-    else if(mode==='Team2'){
-     team=<Team2/>
-    }
-    else if(mode==='Team3'){
-     team=<Team3/>
-    }
+    
 
     return (
       <div>
@@ -87,9 +72,9 @@ constructor(props){
                           <button className="button" onClick={this.onEvent3}>Event3</button>
                           <button className="button" onClick={this.onEvent4}>Event4</button>
                           <br/><br/>
-                          <button className="button" onClick={this.onClear}>Clear</button>
+                          <button className="button" onClick={this.onClearEvent}>Clear</button>
                           <br/><br/>
-                          {event}
+                          {this.state.event}
 
                 </div>
                 
@@ -100,9 +85,9 @@ constructor(props){
                           <button className="button" onClick={this.onTeam2}>Team2</button>
                           <button className="button" onClick={this.onTeam3}>Team3</button>
                           <br/><br/>
-                          <button className="button" onClick={this.onClear}>Clear</button> 
+                          <button className="button" onClick={this.onClearTeam}>Clear</button> 
                           <br/><br/>
-                          {team}   
+                          {this.state.team}   
                                                        
                 </div>
       </div>
