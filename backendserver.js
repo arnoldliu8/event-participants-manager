@@ -11,10 +11,10 @@ app.use(cors())
 const db = knex({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    user : 'postgres',
-    password : 'football',
-    database : 'postgres'
+    host : 'localhost',
+    user : 'yourUsername',
+    password : 'yourPassword ',
+    database : 'yourDatabaseName'
   }
 });
 //check knex docs for database syntaxes
